@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to payment..</title>
+</head>
+
+<body>
+  <h1>Do not reload...</h1>
+  <form action='https://test.payu.in/_payment' method='post' name="form">
+    {% for key, value in details.items %}
+    <input type="hidden" name="{{key}}" value="{{value}}" />
+    {% endfor %}
+  </form>
+</body>
+  <script>
+    document.form.submit()
+  </script>
+
+</html>
