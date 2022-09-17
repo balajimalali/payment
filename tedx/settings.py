@@ -142,8 +142,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 # location where you will store your static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'tedx/static'),
-    os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR,'tedx/static')
 ]
 
 
