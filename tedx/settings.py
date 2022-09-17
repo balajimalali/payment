@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-HOST = 'https://tedxnitw.herokuapp.com'
+HOST = 'tedxnitw.herokuapp.com'
 SALT = os.environ.get('SALT')
 KEYP = os.environ.get('KEYP')
 TXNSALT = os.environ.get('TXNSALT')
