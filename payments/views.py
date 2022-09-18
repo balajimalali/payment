@@ -48,8 +48,8 @@ def make_payment(request):
         'firstname': info['firstname'],
         'email': info['email'],
         'lastname': info['lastname'],
-        'surl': host + '/payment_temp/surl/',
-        'furl': host + '/payment_temp/furl/',
+        'surl': 'https://'+ host + '/payment_temp/surl/',
+        'furl': 'https://'+ host + '/payment_temp/furl/',
         'phone': info['phone']
     }
 
@@ -82,6 +82,9 @@ def surl(request):
         txnmod.status = True
         txnmod.mode_err = res['mode']
         txnmod.save()
+        show = get_object_or_404(Show, show_name=res['productinfo'])
+        show.sold_tkt = show.sold_tkt + 1
+        show.save()
         return render(request, 'transaction.html', {'obj': txnmod})
     else:
         return HttpResponse('Malpractice')
