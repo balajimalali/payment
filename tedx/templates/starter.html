@@ -30,8 +30,12 @@
                 <div class="info w-75">
                     <h5 class="card-title">{{show.speaker}}</h5>
                     <p class="card-text">{{show.desc}}</p>
-                    <p class="card-text"><b> price: {{show.price}} </b></p>
+                    <p class="card-text"><b> Venue: {{show.venue}} </b></p>
+                    {% if (show.avl_tkt - show.sold_tkt)>0 %}
+                    <p class="card-text"><b> Price: {{show.price}} </b></p>
+                    <p class="card-text"><b style="color: red;"> Available tickets: {{show.avl_tkt - show.sold_tkt}} </b></p>
                     <a href="/payment_temp?show={{show.show_name}}" class="btn btn-info">Buy Ticket</a>
+                    {% endif %}
                 </div>
                 <div class="image mx-auto mb-2">
                     <img src="{% static 'demopic.png' %}" alt="">
